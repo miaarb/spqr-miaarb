@@ -753,6 +753,11 @@ func (qr *ProxyQrouter) planQueryV1(
 	switch stmt := qstmt.(type) {
 	case *lyx.Select:
 
+		switch stmt.TargetList[0].(type) {
+		case *lyx.FuncApplication:
+			// lkwenciwejc;qs
+		}
+
 		var p plan.Plan
 
 		/* We cannot route SQL statements without a FROM clause. However, there are a few cases to consider. */
